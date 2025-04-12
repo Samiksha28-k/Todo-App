@@ -1,0 +1,23 @@
+<h1><u>Todo-app</u></h1>
+<div [style]="{backgroundColor:colorCode}">
+  <input type="text" placeholder="Change Theme " [(ngModel)]='colorCode'>
+
+<div class="container">
+<input type="text"  placeholder="Enter Text" [(ngModel)]="task" />
+<button (click)="addTask()">Add Task</button>
+</div>
+@for (task of taskList; track task.id) {
+<ul class="task-list">
+  <div class="id">
+  <li>{{ task.id }}</li>
+  
+  <li>{{ task.task }}</li>
+  
+  <li><button (click)="deleteTask(task.id)">Delete</button></li>
+  </div>
+</ul>
+}
+</div>
+
+
+
